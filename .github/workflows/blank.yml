@@ -44,6 +44,8 @@ jobs:
         VIRTUALENV: env
       run: |
         source $VIRTUALENV/bin/activate
+        zappa deploy dev
+        zappa deploy dev2
         zappa update dev
         zappa update dev2
         source $VIRTUALENV/bin/activate
