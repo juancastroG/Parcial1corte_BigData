@@ -24,10 +24,11 @@ def poner_datos(event, context):
         diccionario_casas['descripcion'] = casa.split('"description": ')[1].split('",')[0]
         lista_info.append(diccionario_casas)
 
-    print(lista_info)
     #poner la info en un bucket de s3
+    actual = datetime.datetime.now()
+    nombre = f"{actual.year}-{actual.strftime('%m')}-{actual.strftime('%d')}.txt"
     client = boto3.client('s3')
-    client.put_object(Body=str(lista_info), Bucket='casasfinalparcial', Key='final.txt')
+    client.put_object(Body=str(lista_info), Bucket='casasfinalparcial', Key=nombre)
 
 
     return {
