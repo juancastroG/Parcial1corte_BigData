@@ -2,6 +2,7 @@ import json
 import datetime
 import boto3
 import csv
+from bs4 import BeautifulSoup
 import tempfile
 
   
@@ -13,7 +14,9 @@ def poner_datos(event, context):
     bucket = s3.Bucket('daticosparcial')
     obj = bucket.Object(nuevo)
 
-    a = obj.find_all('script', {'type': 'application/ld+json'})
+
+    soup = BeautifulSoup(obj, 'html.parser')
+    a = soup.find_all('script', {'type': 'application/ld+json'})
     a_lines = str(str(a).splitlines()[1:-1])
     a_lista_casas = [casa for casa in a_lines.split('image')[1:]]
     diccionario_casas = {}
