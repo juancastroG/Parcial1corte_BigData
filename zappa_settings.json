@@ -20,7 +20,7 @@
         "keep_warm": false,
         "role_name": "LabRole",
         "profile_name": null,
-        "project_name": "punto12",
+        "project_name": "Parcial_Final1Corte",
         "runtime": "python3.8",
         "s3_bucket": "daticosparcial",
         "manage_roles": false,
