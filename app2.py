@@ -28,7 +28,7 @@ def poner_datos(event, context):
         lista_info.append(diccionario_casas)
     #poner la info en un bucket de s3
     s3 = boto3.resource('s3')
-    bucket = s3.Bucket('daticosparcial')
+    bucket = s3.Bucket('casasfinalparcial')
     print('Se conecto al bucket')
     bucket.put_object(Key='final.txt', Body=str(lista_info))
 
