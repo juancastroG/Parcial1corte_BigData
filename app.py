@@ -25,7 +25,7 @@ def app(event, context):
     bucket = s3.Bucket('daticosparcial')
     print('Se conecto al bucket')
     print(datos)
-    bucket.put_object(Key='hola.txt', Body=datos)
+    bucket.put_object(Key='datosTula.txt', Body=datos)
     
     print('PAso')
     return {
