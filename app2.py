@@ -28,13 +28,13 @@ def poner_datos(event, context):
         lista_info.append(diccionario_casas)
     #poner la info en un bucket de s3
     s3 = boto3.resource('s3')
-    #s3.Bucket('zappa-ej8reqceh').put_object(Key='info3.json', Body=str(lista_info))
-    s3.Bucket('daticosparcial').put_object(Key='datos_finales.json', Body=str(diccionario_casas))
-
+    bucket = s3.Bucket('daticosparcial')
+    print('Se conecto al bucket')
+    bucket.put_object(Key='final.txt', Body=str(lista_info))
 
 
     return {
         'statusCode': 200,
-        'body': json.dumps('Ya esta 2')
+        'body': json.dumps('Finisimo')
     }
   
