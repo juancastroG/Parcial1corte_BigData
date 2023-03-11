@@ -17,19 +17,15 @@ def peticion():
     
 def app(event, context):
     datos = peticion()
-
+    actual = datetime.datetime.now()
+    nombre = f"{actual.year}-{actual.strftime('%m')}-{actual.strftime('%d')}.txt"
     s3 = boto3.resource('s3')
     actual = datetime.datetime.now()
     nombre = f"{actual.year}-{actual.strftime('%m')}-{actual.strftime('%d')}.txt"
     bucket = s3.Bucket('daticosparcial')
     print('Se conecto al bucket')
-    print(datos)
-    bucket.put_object(Key='datosTula.txt', Body=datos)
-    
-    print('PAso')
+    bucket.put_object(Key=nombre, Body=datos)
     return {
         'statusCode': 200,
         'body': json.dumps('Se guardan los datos')
     }
-  
- 
