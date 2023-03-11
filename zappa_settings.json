@@ -28,7 +28,7 @@
         "events": [{
             "function": "app2.poner_datos",
             "event_source": {
-                "arn": "arn:aws:s3:::daticosparcial",
+                "arn": "arn:aws:s3:::casasfinalparcial",
                 "events": [
                     "s3:ObjectCreated:*"
                 ]
