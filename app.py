@@ -15,7 +15,6 @@ def peticion():
 
     
     
-    
 def app(event, context):
     datos = peticion()
 
