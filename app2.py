@@ -28,7 +28,7 @@ def poner_datos(event, context):
         lista_info.append(diccionario_casas)
     #poner la info en un bucket de s3
     client = boto3.client('s3')
-    client.put_object(Body=str(lista_info), Bucket='casasfinalparcial', Key='final.txt)
+    client.put_object(Body=str(lista_info), Bucket='casasfinalparcial', Key='final.txt')
 
 
     return {
