@@ -5,7 +5,7 @@
         "profile_name": null,
         "project_name": "Parcial_Final1Corte",
         "runtime": "python3.8",
-        "s3_bucket": "casasfinalparcial",
+        "s3_bucket": "parcial1corte",
         "keep_warm": false,
         "role_name": "LabRole",
         "manage_roles": false,
@@ -22,7 +22,7 @@
         "profile_name": null,
         "project_name": "Parcial_Final1Corte",
         "runtime": "python3.8",
-        "s3_bucket": "casasfinalparcial",
+        "s3_bucket": "parcial1corte",
         "manage_roles": false,
         "apigateway_enabled": false,
         "events": [{
