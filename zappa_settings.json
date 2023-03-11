@@ -19,6 +19,7 @@
         "app_function": "app2.poner_datos",
         "keep_warm": false,
         "role_name": "LabRole",
+        "aws_region": "us-east-1",
         "profile_name": null,
         "project_name": "Parcial_Final1Corte",
         "runtime": "python3.8",
