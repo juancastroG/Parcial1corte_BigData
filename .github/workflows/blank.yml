@@ -37,23 +37,15 @@ jobs:
         
         
         
-    - name: Lint with flake8
-      env:
-       VIRTUALENV: env
-      run: |
-        source $VIRTUALENV/bin/activate
-        flake8 . --count --select=E9 --show-source --statistics
-        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+    
     - name: Actualiza etapas
       env:
         VIRTUALENV: env
       run: |
         source $VIRTUALENV/bin/activate
+        zappa deploy dev
+        zappa deploy dev2
         zappa update dev
         zappa update dev2
-    - name: Hazlo
-      env:
-        VIRTUALENV: env
-      run: |
         source $VIRTUALENV/bin/activate
-        zappa invoke dev app.app
+        zappa invoke dev app.app    
